@@ -41,6 +41,7 @@ export function ContactSection() {
 
   const contactInfo = [
     {
+      icon: Mail,
       title: "Email",
       value: "payelmallik2619@gmail.com",
       href: "mailto:payelmallik2619@gmail.com"
@@ -74,26 +75,29 @@ export function ContactSection() {
           {/* Contact Information */}
           <div className="space-y-6">
             <h3 className="text-2xl font-bold mb-6">Contact Information</h3>
-            {contactInfo.map((info, index) => (
-              <Card key={index} className="hover:shadow-md transition-shadow">
-                <CardContent className="p-6">
-                  <div className="flex items-center space-x-4">
-                    <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
-                      <info.icon className="h-6 w-6 text-primary" />
+            {contactInfo.map((info, index) => {
+              const Icon = info.icon
+              return (
+                <Card key={index} className="hover:shadow-md transition-shadow">
+                  <CardContent className="p-6">
+                    <div className="flex items-center space-x-4">
+                      <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
+                        <Icon className="h-6 w-6 text-primary" />
+                      </div>
+                      <div>
+                        <h4 className="font-semibold">{info.title}</h4>
+                        <a 
+                          href={info.href}
+                          className="text-muted-foreground hover:text-primary transition-colors"
+                        >
+                          {info.value}
+                        </a>
+                      </div>
                     </div>
-                    <div>
-                      <h4 className="font-semibold">{info.title}</h4>
-                      <a 
-                        href={info.href}
-                        className="text-muted-foreground hover:text-primary transition-colors"
-                      >
-                        {info.value}
-                      </a>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
+                  </CardContent>
+                </Card>
+              )
+            })}
 
             <div className="pt-6">
               <h4 className="font-semibold mb-4">Let's Connect</h4>
