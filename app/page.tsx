@@ -7,7 +7,7 @@ import { Footer } from "@/components/footer"
 import { Toaster } from "@/components/ui/sonner"
 import dynamic from "next/dynamic"
 
-const ContactSection = dynamic(() => import("@/components/ContactSection"), {
+const ContactSection = dynamic(() => import("@/components/contact-section"), {
   ssr: false,
 })
 
