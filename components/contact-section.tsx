@@ -9,7 +9,7 @@ import { Label } from "./ui/label"
 import { Textarea } from "./ui/textarea"
 import { useToast } from "@/hooks/use-toast"
 
-export default function ContactSection() {
+export function ContactSection() {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
