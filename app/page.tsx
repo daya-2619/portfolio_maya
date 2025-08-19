@@ -6,6 +6,11 @@ import { ProjectsSection } from "@/components/projects-section"
 import { ContactSection } from "@/components/contact-section"
 import { Footer } from "@/components/footer"
 import { Toaster } from "@/components/ui/sonner"
+import dynamic from "next/dynamic"
+
+const ContactSection = dynamic(() => import("@/components/ContactSection"), {
+  ssr: false,
+})
 
 export default function Home() {
   return (
